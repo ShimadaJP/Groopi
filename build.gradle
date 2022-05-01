@@ -1,21 +1,46 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group 'com.github.shimada'
-version '1.0-SNAPSHOT'
+version '1.0.0'
 
 repositories {
     mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/public/'
+    }
 }
 
 dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.1'
+
     implementation 'org.codehaus.groovy:groovy-all:3.0.10'
 
+    // test libraries
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
+    testImplementation 'me.clip:placeholderapi:2.11.1'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks {
+    build.dependsOn(shadowJar)
 }
