@@ -11,8 +11,8 @@ import static org.mockito.Mockito.when;
 
 public class GroopiExpansionTests {
 
-    private static final String PLAYER_NAME = "RandomPlayer1234";
-    private static final UUID PLAYER_UUID = UUID.fromString("e5b80352-04d9-4fb6-bd60-7d334346f8b7");
+    private static final String PLAYER_NAME = "Notch";
+    private static final UUID PLAYER_UUID = UUID.fromString("069a79f4-44e9-4726-a5be-fca90e38aaf5");
 
     @Test
     public void testOnRequest() {
