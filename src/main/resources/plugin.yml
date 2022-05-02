@@ -1,4 +1,0 @@
-name: Groopi
-version: 1.0.2
-main: com.github.shimada.groopi.GroopiPlugin
-depend: [ "PlaceholderAPI" ]
