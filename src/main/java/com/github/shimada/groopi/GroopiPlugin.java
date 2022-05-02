@@ -6,6 +6,6 @@ public class GroopiPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new GroopiExpansion().register();
+        new GroopiExpansion(true).register();
     }
 }

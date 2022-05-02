@@ -8,7 +8,16 @@ import java.lang.reflect.Method;
 
 public class GroopiExpansion extends PlaceholderExpansion {
 
+    private final boolean persist;
     private ClassLoader classLoader;
+
+    public GroopiExpansion(boolean persist) {
+        this.persist = persist;
+    }
+
+    public GroopiExpansion() {
+        this(false);
+    }
 
     @Override
     public String onRequest(OfflinePlayer player, String params) {
@@ -72,6 +81,11 @@ public class GroopiExpansion extends PlaceholderExpansion {
 
     @Override
     public String getVersion() {
-        return "1.0.1";
+        return "1.0.2";
+    }
+
+    @Override
+    public boolean persist() {
+        return persist;
     }
 }
