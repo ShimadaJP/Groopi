@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group 'com.github.shimada'
@@ -37,8 +36,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-tasks {
-    build.dependsOn(shadowJar)
 }
